@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
 import serial
+import os
 import sys
+
+PORT = 'COM4' if os.name == 'nt' else '/dev/ttyUSB0'
 
 
 def set_brightness(args):
@@ -39,7 +42,7 @@ payloads = {
 }
 
 if __name__ == '__main__':
-    ser = serial.Serial('/dev/ttyUSB0', 115200)
+    ser = serial.Serial(PORT, 115200)
 
     if len(sys.argv) < 2:
         print('Usage: lightctl command [args]')
