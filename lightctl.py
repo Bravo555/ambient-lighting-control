@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import serial
 import os
@@ -47,7 +47,6 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print('Usage: lightctl command [args]')
         sys.exit(1)
-
     command, *args = sys.argv[1:]
 
     payload = payloads[command](args)
